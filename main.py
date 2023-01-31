@@ -5,8 +5,18 @@ import numpy as np
 def main(documentsTxt):
     # Write the code to compute the One Hot Encodings for various "documents"
     # Make sure that your terminal output matches the terminal output of the example given on the instructions.
+    wordDict = {}
+    numOfLines = 0
+    for line in documentsTxt.splitlines():
+        string_list = line.split()
+        numOfLines += 1
+        for i in string_list:
+            if i not in wordDict:
+                wordDict[i.lower()] = string_list.count(i)
 
-    return None
+    array = np.empty(numOfLines, len(wordDict))
+
+    return array
 
 
 if __name__ == "__main__":
