@@ -1,5 +1,5 @@
 import argparse
-import numpy
+import numpy as np
 
 
 def main(documentsTxt):
@@ -14,7 +14,7 @@ def main(documentsTxt):
             if i not in wordDict:
                 wordDict[i.lower()] = string_list.count(i)
 
-    array = numpy.empty(numOfLines, len(wordDict))
+    array = np.empty(numOfLines, len(wordDict))
     # fill the matrix with the amount of times each word appears in each document
     for i in range(numOfLines):
         for j in range(len(wordDict)):
